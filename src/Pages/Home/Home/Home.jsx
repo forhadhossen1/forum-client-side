@@ -1,11 +1,14 @@
 import Footer from "../../../Component/Footer/Footer";
+import Announcement from "../Announcement";
+import Banner from "../Banner";
 import Navbar from "../Navbar";
 
 const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            hello Home pages
+            <Banner></Banner>
+            <Announcement></Announcement>
             <Footer></Footer>
         </div>
     );
