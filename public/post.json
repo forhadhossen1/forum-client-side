@@ -1,24 +1,27 @@
 [
     {
-        "image": "author_image_url.jpg",
+        "id": "1",
+        "image": "https://i.ibb.co/RCPKwZ3/user.jpg",
         "name": "John Doe",
-        "title": "Sports Topic: Exploring the World of Forums",
+        "title": " Exploring the World of Forums",
         "description": "A detailed exploration of the functionalities and benefits of forum websites related to sports.",
         "tag": "Sports",
         "post_time": "2023-11-26T12:00:00Z"
     },
     {
-        "image": "author2_image_url.jpg",
+        "id": "2",
+        "image": "https://i.ibb.co/RCPKwZ3/user.jpg",
         "name": "Jane Smith",
-        "title": "Program Topic: Best Practices for Forum Moderation",
+        "title": "Best Practices for Forum Moderation",
         "description": "Tips and strategies for effective moderation in online forums related to programming.",
         "tag": "Program",
         "post_time": "2023-11-25T10:30:00Z"
     },
     {
-        "image": "author3_image_url.jpg",
+        "id": "3",
+        "image": "https://i.ibb.co/RCPKwZ3/user.jpg",
         "name": "Alex Johnson",
-        "title": "Business Topic: The Future of Online Discussions",
+        "title": "The Future of Online Discussions",
         "description": "Predictions and trends shaping the landscape of online discussions in the business domain.",
         "tag": "Business",
         "post_time": "2023-11-24T15:45:00Z"
