@@ -1,20 +1,15 @@
 
-import { useEffect, useState } from "react";
+import useForum from "../../Hooks/useForum";
 import ForumTopic from "./ForumTopic";
 
 
 
 const Forum = () => {
-    const [forums, setForums] = useState([]);
-    useEffect(() => {
-        fetch('post.json')
-            .then(res => res.json())
-            .then(data => setForums(data))
-    }, [])
+    const [forums]= useForum();
     return (
         <div className="flex flex-col gap-5 my-10">
             {
-                forums.map(forum => <ForumTopic key={forum.id} forum={forum}></ForumTopic>)
+                forums.map(forum => <ForumTopic key={forum._id} forum={forum}></ForumTopic>)
             }
         </div>
     );

@@ -1,6 +1,5 @@
 [
     {
-        "id": "1",
         "image": "https://i.ibb.co/RCPKwZ3/user.jpg",
         "name": "John Doe",
         "title": " Exploring the World of Forums",
@@ -9,7 +8,6 @@
         "post_time": "2023-11-26T12:00:00Z"
     },
     {
-        "id": "2",
         "image": "https://i.ibb.co/RCPKwZ3/user.jpg",
         "name": "Jane Smith",
         "title": "Best Practices for Forum Moderation",
@@ -18,7 +16,6 @@
         "post_time": "2023-11-25T10:30:00Z"
     },
     {
-        "id": "3",
         "image": "https://i.ibb.co/RCPKwZ3/user.jpg",
         "name": "Alex Johnson",
         "title": "The Future of Online Discussions",
