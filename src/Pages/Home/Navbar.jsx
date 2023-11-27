@@ -60,7 +60,9 @@ const Navbar = () => {
                             <h4 className="text-center font-bold py-4">
                                 {user?.displayName}
                             </h4>
-                            <li className="py-4">Dashboard</li>
+                            <Link to='/dashboard'>
+                                <li className="pb-5 font-bold"><NavLink to='/dashboard'>Dashboard</NavLink></li>
+                            </Link>
                             <button onClick={handleLogOut} className="btn btn-sm px-6 py-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border-none">Log Out</button>
 
                         </ul>
