@@ -22,7 +22,6 @@ const SignUp = () => {
                         const userInfo = {
                             name: data.name,
                             email: data.email,
-                            Badge: <img src="https://i.ibb.co/fQtnym0/bronze-Badge.png" alt="badge" />
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
