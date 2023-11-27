@@ -1,13 +1,20 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import logo from '../../assets/Forum.png';
+import { FaHome } from "react-icons/fa";
 
 const Dashboard = () => {
     return (
-        <div>
+        <div className="flex">
             <div className="w-64 min-h-screen bg-blue-500">
                 <div className="flex justify-center">
-                    <img src={logo} alt="logo" className="h-[100px]"/>
+                    <img src={logo} alt="logo" className="h-[100px]" />
                 </div>
+
+                <ul className="menu p-6 space-y-5 uppercase font-bold text-black hover:text-white">
+
+                    <li><NavLink to='/dashboard/myProfile'>
+                        <FaHome />  My Profile </NavLink></li>
+                </ul>
             </div>
 
 
