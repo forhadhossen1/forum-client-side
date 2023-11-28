@@ -17,7 +17,7 @@ const MyProfile = () => {
     }
     return (
         <div className="flex flex-col min-h-screen items-center justify-center bg-gray-200">
-            <h2 className="text-4xl font-bold text-center block tracking-normal antialiased relative text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <h2 className="text-5xl font-bold text-center block tracking-normal antialiased relative text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                 <span>Hi, Welcome </span>
                 {
                     user?.displayName ? user.displayName : 'Back'

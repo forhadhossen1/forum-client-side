@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Dashboard from "../Layouts/Dashboard/Dashboard";
 import MyProfile from "../Pages/DashboardPages/UserPages/MyProfile";
+import AddPost from "../Pages/DashboardPages/UserPages/AddPost";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: 'myProfile',
                 element: <MyProfile></MyProfile>
+            },
+            {
+                path: 'addPost',
+                element: <AddPost></AddPost>
             }
         ]
     }

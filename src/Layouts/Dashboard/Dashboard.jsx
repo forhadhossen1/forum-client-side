@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import logo from '../../assets/Forum.png';
-import { FaHome } from "react-icons/fa";
+import { FaAddressBook, FaHome } from "react-icons/fa";
 
 const Dashboard = () => {
     return (
@@ -12,8 +12,14 @@ const Dashboard = () => {
 
                 <ul className="menu p-6 space-y-5 uppercase font-bold text-black hover:text-white">
 
-                    <li><NavLink to='/dashboard/myProfile'>
-                        <FaHome />  My Profile </NavLink></li>
+                    <li>
+                        <NavLink to='/dashboard/myProfile'>
+                            <FaHome />  My Profile </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/dashboard/addPost'>
+                            <FaAddressBook /> Add Post </NavLink>
+                    </li>
                 </ul>
             </div>
 
