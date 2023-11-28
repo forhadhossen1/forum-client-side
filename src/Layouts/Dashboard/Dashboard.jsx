@@ -20,8 +20,21 @@ const Dashboard = () => {
                         <NavLink to='/dashboard/addPost'>
                             <FaAddressBook /> Add Post </NavLink>
                     </li>
+                    <li>
+                        <NavLink to='/dashboard/myPost'>
+                            <FaAddressBook /> My Post </NavLink>
+                    </li>
+
+
+
+                    <div className="divider"></div>
+
+                    <li><NavLink to='/'>
+                        <FaHome />  Home
+                    </NavLink></li>
                 </ul>
             </div>
+
 
 
 
