@@ -39,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: 'adminProfile',
                 element: <AdminProfile></AdminProfile>
+            },
+            {
+                path: 'manageUser',
+                element: <
             }
             ,
 
