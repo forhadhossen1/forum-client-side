@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Dashboard from "../Layouts/Dashboard/Dashboard";
 import MyProfile from "../Pages/DashboardPages/UserPages/MyProfile";
 import AddPost from "../Pages/DashboardPages/UserPages/AddPost";
+import MyPost from "../Pages/DashboardPages/UserPages/MyPost";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: 'addPost',
                 element: <AddPost></AddPost>
+            },
+            {
+                path: 'myPost',
+                element: <MyPost></MyPost>
             }
         ]
     }
