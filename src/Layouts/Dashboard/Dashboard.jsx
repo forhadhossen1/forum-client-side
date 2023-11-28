@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import logo from '../../assets/Forum.png';
-import { FaAddressBook, FaHome, FaUsers } from "react-icons/fa";
+import { FaAddressBook, FaComments, FaHome, FaUsers } from "react-icons/fa";
+import { AiFillSound } from "react-icons/ai";
 
 const Dashboard = () => {
     const isAdmin = true;
@@ -24,11 +25,11 @@ const Dashboard = () => {
                             </li>
 
                             <li><NavLink to='/dashboard/comments'>
-                                <FaUsers />  Comments</NavLink>
+                            <FaComments />  Comments</NavLink>
                             </li>
 
                             <li><NavLink to='/dashboard/announcement'>
-                                <FaUsers />Announcements</NavLink>
+                                <AiFillSound />Announcements</NavLink>
                             </li>
 
                         </>

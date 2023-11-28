@@ -9,6 +9,9 @@ import MyProfile from "../Pages/DashboardPages/UserPages/MyProfile";
 import AddPost from "../Pages/DashboardPages/UserPages/AddPost";
 import MyPost from "../Pages/DashboardPages/UserPages/MyPost";
 import AdminProfile from "../Pages/DashboardPages/AdminPages/AdminProfile";
+import ManageUsers from "../Pages/DashboardPages/AdminPages/manageUsers";
+import Announcements from "../Pages/DashboardPages/AdminPages/Announcements";
+import Comments from "../Pages/DashboardPages/AdminPages/Comments";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +34,7 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path : '/dashboard',
+        path: '/dashboard',
         element: <Dashboard></Dashboard>,
         children: [
 
@@ -42,7 +45,15 @@ const router = createBrowserRouter([
             },
             {
                 path: 'manageUser',
-                element: <
+                element: <ManageUsers></ManageUsers>
+            },
+            {
+                path: 'announcement',
+                element: <Announcements></Announcements>
+            },
+            {
+                path: 'comments',
+                element: <Comments></Comments>
             }
             ,
 
