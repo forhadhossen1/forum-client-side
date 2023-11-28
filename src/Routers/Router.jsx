@@ -8,6 +8,7 @@ import Dashboard from "../Layouts/Dashboard/Dashboard";
 import MyProfile from "../Pages/DashboardPages/UserPages/MyProfile";
 import AddPost from "../Pages/DashboardPages/UserPages/AddPost";
 import MyPost from "../Pages/DashboardPages/UserPages/MyPost";
+import AdminProfile from "../Pages/DashboardPages/AdminPages/AdminProfile";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,15 @@ const router = createBrowserRouter([
         path : '/dashboard',
         element: <Dashboard></Dashboard>,
         children: [
+
+            // admin route.......... 
+            {
+                path: 'adminProfile',
+                element: <AdminProfile></AdminProfile>
+            }
+            ,
+
+            // user route................ 
             {
                 path: 'myProfile',
                 element: <MyProfile></MyProfile>
