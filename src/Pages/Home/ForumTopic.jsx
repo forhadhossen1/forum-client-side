@@ -2,6 +2,7 @@ import { FcLike } from "react-icons/fc";
 
 const ForumTopic = ({ forum }) => {
     const { image, title, tag, post_time } = forum || {};
+
     return (
         <div className="flex flex-col md:flex-row justify-between p-6 space-y-6 overflow-hidden shadow-lg dark:bg-gray-900 dark:text-gray-100">
             <div className="flex space-x-4">
@@ -13,7 +14,7 @@ const ForumTopic = ({ forum }) => {
             </div>
 
             <div>
-                <div>
+                <div className="flex justify-end pb-5 font-bold">
                     <span className="text-xs dark:text-gray-400">{post_time}</span>
                 </div>
                 <div className="flex space-x-2 text-sm dark:text-gray-400">

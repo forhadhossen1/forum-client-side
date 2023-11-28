@@ -1,16 +1,25 @@
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useAuth from "../../../Hooks/useAuth";
 
 
 const imgae_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const imgae_hosting_api = `https://api.imgbb.com/1/upload?key=${imgae_hosting_key}`
 
+
 const AddPost = () => {
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
+    const {user} =useAuth();
+   
 
     const onSubmit = async (data) => {
+        const currentDate = new Date();
+        const formattedTime = currentDate.toLocaleTimeString();
+
         console.log(data)
         //image upload to imgbb and then get an url
         const imageFile = { image: data.image[0] }
@@ -21,22 +30,23 @@ const AddPost = () => {
         });
         if (res.data.success) {
             // now send the menu item data to the server with the image url 
-            const menuItem = {
+            const forumItem = {
                 name: data.name,
                 title: data.title,
                 tag: data.tag,
                 email: data.email,
                 description: data.description,
-                image: res.data.data.display_url
+                image: res.data.data.display_url,
+                post_time: formattedTime
             }
 
-            const menuRes = await axiosSecure.post('/menu', menuItem);
-            console.log(menuRes.data);
-            if (menuRes.data.insertedId) {
+            const forumRes = await axiosSecure.post('/forum', forumItem);
+            console.log(forumRes.data);
+            if (forumRes.data.insertedId) {
                 reset();
                 Swal.fire({
                     title: "Success",
-                    text: `${data.name} is added to the menu.`,
+                    text: `${data.name} is added to the post.`,
                     icon: "success"
                 });
             }
@@ -45,9 +55,10 @@ const AddPost = () => {
         console.log('with img url', res.data)
     };
     return (
-        <div className="bg-slate-200  p-10 rounded-xl">
+        <div className="flex flex-col min-h-screen justify-center bg-slate-200  p-10 ">
 
             <div>
+                <h2 className="text-4xl font-bold text-center py-4 block tracking-normal antialiased relative text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Add Post</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     <div className="form-control w-full ">
                         <label className="label">
@@ -90,6 +101,7 @@ const AddPost = () => {
                                 <span className="label-text font-bold">Author Email*</span>
                             </label>
                             <input {...register("email", { required: true })}
+                            defaultValue={user?.email}
                                 type="text" placeholder="Recipe email" className="input input-bordered w-full " />
                         </div>
                     </div>
