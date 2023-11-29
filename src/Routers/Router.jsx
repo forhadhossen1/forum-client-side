@@ -12,6 +12,7 @@ import AdminProfile from "../Pages/DashboardPages/AdminPages/AdminProfile";
 import ManageUsers from "../Pages/DashboardPages/AdminPages/manageUsers";
 import Announcements from "../Pages/DashboardPages/AdminPages/Announcements";
 import Comments from "../Pages/DashboardPages/AdminPages/Comments";
+import Membership from "../Pages/Membership/Membership";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/signUp',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/membership',
+                element: <Membership></Membership>
             }
         ]
     },
