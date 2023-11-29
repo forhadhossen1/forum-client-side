@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Announcements = () => {
@@ -11,7 +10,6 @@ const Announcements = () => {
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
-    const { user } = useAuth();
 
 
     const onSubmit = async (data) => {
@@ -28,7 +26,7 @@ const Announcements = () => {
         });
         if (res.data.success) {
             // now send the menu item data to the server with the image url 
-            const forumItem = {
+            const announcementsItem = {
                 name: data.name,
                 title: data.title,
                 description: data.description,
@@ -36,9 +34,9 @@ const Announcements = () => {
                 post_time: formattedTime
             }
 
-            const forumRes = await axiosSecure.post('/forum', forumItem);
-            console.log(forumRes.data);
-            if (forumRes.data.insertedId) {
+            const announcementRes = await axiosSecure.post('/announcements', announcementsItem);
+            console.log(announcementRes.data);
+            if (announcementRes.data.insertedId) {
                 reset();
                 Swal.fire({
                     title: "Success",
