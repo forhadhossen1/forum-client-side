@@ -1,9 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import logo from '../../assets/Forum.png'
+import useAnnouncements from "../../Hooks/useAnnouncements";
 
 const Navbar = () => {
-    const { user, logOut } = useAuth();
+    const { user, logOut, loading } = useAuth();
+    const [announcement] = useAnnouncements();
+
+    if (loading) {
+        return <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+        }}>
+            <div className="w-24 h-24 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 flex justify-center items-center"></div>
+        </div>
+
+    }
 
     const handleLogOut = () => {
         logOut()
@@ -43,7 +57,11 @@ const Navbar = () => {
                 <label tabIndex={0} className="btn btn-ghost btn-circle">
                     <div className="indicator">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-                        <span className="badge badge-sm indicator-item">8</span>
+                        {announcement.length === 0 ? (
+                            <span className="badge badge-sm indicator-item bg-red-600 text-white">0</span>
+                        ) : (
+                            <span className="badge badge-sm indicator-item bg-red-600 text-white">{announcement.length}</span>
+                        )}
                     </div>
                 </label>
 
