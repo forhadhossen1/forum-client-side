@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import GoogleLogin from "../../Component/SocialLogin/GoogleLogin";
 
 const Login = () => {
-    const { signIn } = useAuth;
+    const { signIn } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 

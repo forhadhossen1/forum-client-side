@@ -2,9 +2,11 @@ import { NavLink, Outlet } from "react-router-dom";
 import logo from '../../assets/Forum.png';
 import { FaAddressBook, FaComments, FaHome, FaUsers } from "react-icons/fa";
 import { AiFillSound } from "react-icons/ai";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Dashboard = () => {
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    // const isAdmin = true;
     return (
         <div className="flex">
             <div className="w-64 min-h-screen bg-blue-500">
@@ -25,7 +27,7 @@ const Dashboard = () => {
                             </li>
 
                             <li><NavLink to='/dashboard/comments'>
-                            <FaComments />  Comments</NavLink>
+                                <FaComments />  Comments</NavLink>
                             </li>
 
                             <li><NavLink to='/dashboard/announcement'>

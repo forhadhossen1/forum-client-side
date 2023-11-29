@@ -54,7 +54,7 @@ const ManageUsers = () => {
 
     }
     return (
-        <div className="bg-slate-200 p-10 rounded-xl">
+        <div className="bg-slate-200 p-10">
             <div className="text-3xl font-bold md:flex justify-btween">
                 <h2>All Users :{users.length}</h2>
             </div>
