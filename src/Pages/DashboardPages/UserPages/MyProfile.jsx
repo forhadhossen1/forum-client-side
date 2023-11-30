@@ -25,8 +25,8 @@ const MyProfile = () => {
             </h2>
 
             <div className="flex justify-center py-5">
-                {user && user.photoURL ? (
-                    <img src={user.photoURL} alt="User" className="w-[200px] rounded-full" />
+                {user && user?.photoURL ? (
+                    <img src={user?.photoURL} alt="User" className="w-[200px] rounded-full" />
                 ) : (
                     <FcBusinessman className="w-[200px] rounded-full text-8xl" />
                 )}

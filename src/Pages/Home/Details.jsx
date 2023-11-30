@@ -7,8 +7,20 @@ import Swal from "sweetalert2";
 
 const Details = () => {
     const forumDetails = useLoaderData();
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
     const axiosPublic = useAxiosPublic();
+
+    if (loading) {
+        return <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+        }}>
+            <div className="w-24 h-24 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 flex justify-center items-center"></div>
+        </div>
+    }
+
 
     const handleComment = async (e) => {
 
@@ -35,6 +47,8 @@ const Details = () => {
     }
 
     const { name, image, post_time, tag, description, title, _id } = forumDetails || {};
+
+
     return (
         <div className="py-12 border my-3">
             <div className="flex flex-col md:flex-row justify-between  space-y-6 overflow-hidden ">
@@ -56,11 +70,11 @@ const Details = () => {
                                 <div className="modal-box">
 
                                     <div className="flex gap-6">
-                                        <FacebookShareButton url={`http://localhost:5000/details/${_id.toString()}`}>
+                                        <FacebookShareButton url={`https://assignment12-server-side-six.vercel.app/details/${_id.toString()}`}>
                                             <FacebookIcon size={32} round />
                                         </FacebookShareButton>
 
-                                        <TwitterShareButton url={`http://localhost:5000/details/${_id.toString()}`}>
+                                        <TwitterShareButton url={`https://assignment12-server-side-six.vercel.app/details/${_id.toString()}`}>
                                             <TwitterIcon size={32} round />
                                         </TwitterShareButton>
                                     </div>
@@ -78,7 +92,7 @@ const Details = () => {
                 </div>
             </div>
             <form onSubmit={handleComment} className=" p-3 flex gap-4">
-                <img src={user.photoURL} alt="" className="w-12 h-12 rounded-full " />
+                <img src={user?.photoURL} alt="" className="w-12 h-12 rounded-full " />
                 <textarea
                     name="comment"
                     placeholder="Write your comment..."

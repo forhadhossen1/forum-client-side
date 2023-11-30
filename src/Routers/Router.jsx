@@ -38,12 +38,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/membership',
-                element: <Membership></Membership>
+                element: <PrivetRouts><Membership></Membership></PrivetRouts>
             },
             {
                 path: '/details/:id',
                 element: <Details></Details>,
-                loader: ({params})=> fetch(`http://localhost:5000/forum/${params.id}`)
+                loader: ({params})=> fetch(`https://assignment12-server-side-six.vercel.app/forum/${params.id}`)
 
             }
         ]

@@ -76,8 +76,8 @@ const AdminProfile = () => {
 
 
             <div className="flex justify-center py-5">
-                {user && user.photoURL ? (
-                    <img src={user.photoURL} alt="User" className="w-[200px] rounded-full" />
+                {user && user?.photoURL ? (
+                    <img src={user?.photoURL} alt="User" className="w-[200px] rounded-full" />
                 ) : (
                     <FcBusinessman className="w-[190px] h-[190px] rounded-full text-8xl  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" />
                 )}
