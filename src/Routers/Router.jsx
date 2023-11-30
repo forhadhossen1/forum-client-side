@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <Details></Details>,
-                loader: ({params})=> fetch(`https://assignment12-server-side-six.vercel.app/forum/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:5000/forum/${params.id}`)
 
             }
         ]
