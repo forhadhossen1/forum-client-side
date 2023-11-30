@@ -28,11 +28,11 @@ const Details = () => {
                                 <div className="modal-box">
 
                                     <div className="flex gap-6">
-                                        <FacebookShareButton url={`http://localhost:5000/details/${_id.toString()}`}>
+                                        <FacebookShareButton url={`https://assignment12-server-side-six.vercel.app/details/${_id.toString()}`}>
                                             <FacebookIcon size={32} round />
                                         </FacebookShareButton>
 
-                                        <TwitterShareButton url={`http://localhost:5000/details/${_id.toString()}`}>
+                                        <TwitterShareButton url={`https://assignment12-server-side-six.vercel.app/details/${_id.toString()}`}>
                                             <TwitterIcon size={32} round />
                                         </TwitterShareButton>
                                     </div>
