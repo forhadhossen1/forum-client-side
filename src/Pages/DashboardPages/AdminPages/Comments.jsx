@@ -1,8 +1,8 @@
 
 const Comments = () => {
     return (
-        <div>
-            yesh comments seciton
+        <div className="bg-gray-200 min-h-screen">
+           
         </div>
     );
 };
