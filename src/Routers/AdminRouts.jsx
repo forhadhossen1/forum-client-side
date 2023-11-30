@@ -8,14 +8,20 @@ const AdminRouts = ({ children }) => {
     const [isAdmin, isAdminLoading] = useAdmin();
     const location = useLocation();
 
-
-
     if (loading || isAdminLoading) {
-        return <progress className="progress w-56"></progress>
+        return <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+        }}>
+            <div className="w-24 h-24 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 flex justify-center items-center"></div>
+        </div>
+
     }
 
     if (user && isAdmin) {
-    // if (isAdmin) {
+        // if (isAdmin) {
         return children
     } else {
 

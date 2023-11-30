@@ -13,6 +13,9 @@ import ManageUsers from "../Pages/DashboardPages/AdminPages/manageUsers";
 import Announcements from "../Pages/DashboardPages/AdminPages/Announcements";
 import Comments from "../Pages/DashboardPages/AdminPages/Comments";
 import Membership from "../Pages/Membership/Membership";
+import PrivetRouts from "./PrivetRout";
+import AdminRouts from "./AdminRouts";
+import ManageAnnounce from "../Pages/DashboardPages/AdminPages/ManageAnnounce";
 
 const router = createBrowserRouter([
     {
@@ -40,25 +43,29 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivetRouts><Dashboard></Dashboard></PrivetRouts>,
         children: [
 
             // admin route.......... 
             {
                 path: 'adminProfile',
-                element: <AdminProfile></AdminProfile>
+                element: <AdminRouts><AdminProfile></AdminProfile></AdminRouts>
             },
             {
                 path: 'manageUser',
-                element: <ManageUsers></ManageUsers>
+                element:<AdminRouts> <ManageUsers></ManageUsers></AdminRouts>
             },
             {
                 path: 'announcement',
-                element: <Announcements></Announcements>
+                element: <AdminRouts><Announcements></Announcements></AdminRouts>
             },
             {
                 path: 'comments',
-                element: <Comments></Comments>
+                element: <AdminRouts><Comments></Comments></AdminRouts>
+            },
+            {
+                path: 'announceManage',
+                element: <AdminRouts><ManageAnnounce></ManageAnnounce></AdminRouts>
             }
             ,
 

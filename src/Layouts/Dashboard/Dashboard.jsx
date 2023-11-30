@@ -33,6 +33,9 @@ const Dashboard = () => {
                             <li><NavLink to='/dashboard/announcement'>
                                 <AiFillSound />Announcements</NavLink>
                             </li>
+                            <li><NavLink to='/dashboard/announceManage'>
+                                <AiFillSound />Manage Announce</NavLink>
+                            </li>
 
                         </>
                         :
