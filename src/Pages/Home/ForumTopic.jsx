@@ -1,14 +1,17 @@
 import { FcLike } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const ForumTopic = ({ forum }) => {
-    const { image, title, tag, post_time } = forum || {};
+    const { image, title, tag, post_time, _id } = forum || {};
 
     return (
         <div className="flex flex-col md:flex-row justify-between p-6 space-y-6 overflow-hidden shadow-lg dark:bg-gray-900 dark:text-gray-100">
             <div className="flex space-x-4">
                 <img alt="" src={image} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                 <div className="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="" className="text-lg font-bold">{title}</a>
+                    <Link to={`/details/${_id} `} className="text-lg font-bold">
+                        {title}
+                    </Link>
                     <span className="font-bold dark:text-gray-400 py-4 text-blue-500"># {tag}</span>
                 </div>
             </div>

@@ -16,6 +16,7 @@ import Membership from "../Pages/Membership/Membership";
 import PrivetRouts from "./PrivetRout";
 import AdminRouts from "./AdminRouts";
 import ManageAnnounce from "../Pages/DashboardPages/AdminPages/ManageAnnounce";
+import Details from "../Pages/Home/Details";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,12 @@ const router = createBrowserRouter([
             {
                 path: '/membership',
                 element: <Membership></Membership>
+            },
+            {
+                path: '/details/:id',
+                element: <Details></Details>,
+                loader: ({params})=> fetch(`http://localhost:5000/forum/${params.id}`)
+
             }
         ]
     },
@@ -53,7 +60,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'manageUser',
-                element:<AdminRouts> <ManageUsers></ManageUsers></AdminRouts>
+                element: <AdminRouts> <ManageUsers></ManageUsers></AdminRouts>
             },
             {
                 path: 'announcement',
