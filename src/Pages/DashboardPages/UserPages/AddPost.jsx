@@ -13,12 +13,13 @@ const AddPost = () => {
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
-    const {user} =useAuth();
-   
+    const { user } = useAuth();
+
 
     const onSubmit = async (data) => {
         const currentDate = new Date();
-        const formattedTime = currentDate.toLocaleTimeString();
+        const options = { timeZone: 'Asia/Dhaka' };
+        const formattedDateTime = currentDate.toLocaleString('en-US', options);
 
         console.log(data)
         //image upload to imgbb and then get an url
@@ -37,7 +38,7 @@ const AddPost = () => {
                 email: data.email,
                 description: data.description,
                 image: res.data.data.display_url,
-                post_time: formattedTime
+                post_time: formattedDateTime
             }
 
             const forumRes = await axiosSecure.post('/forum', forumItem);
@@ -101,7 +102,7 @@ const AddPost = () => {
                                 <span className="label-text font-bold">Author Email*</span>
                             </label>
                             <input {...register("email", { required: true })}
-                            defaultValue={user?.email}
+                                defaultValue={user?.email}
                                 type="text" placeholder="Recipe email" className="input input-bordered w-full " />
                         </div>
                     </div>
